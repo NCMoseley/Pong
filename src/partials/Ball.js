@@ -7,8 +7,9 @@ export default class Ball {
         this.boardHeight = boardHeight;
         this.direction = 1;
         this.ping = new Audio('public/sounds/pong-01.wav');
-        this.ping2 = new Audio('public/sounds/pong-04.wav');
-        this.ping3 = new Audio('public/sounds/pong-03.wav');
+        this.ping2 = new Audio('public/sounds/pong-03.wav');
+        this.ping3 = new Audio('http://www.sa-matra.net/sounds/starwars/Blaster-Imperial.wav');
+       
         this.reset();
     }
     // Starting Position for ball
@@ -33,16 +34,16 @@ export default class Ball {
         if(hitLeft){
           this.goal(paddleTwo);
           this.direction = -1;
-          this.ping2.play();
+          this.ping3.play();
 
         }else if(hitRight){
           this.goal(paddleOne);
           this.direction = 1;
-          this.ping2.play();
+          this.ping3.play();
 
         }else if(hitTop || hitBottom){
           this.vy = -this.vy;
-          this.ping3.play();
+          this.ping2.play();
 
         }
     }

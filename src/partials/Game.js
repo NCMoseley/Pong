@@ -10,6 +10,8 @@ export default class Game {
 		this.element = element;
 		this.width = width;
 		this.height = height;
+		this.zelda = new Audio('./Audio/04_-overworld.wav');
+		
 
 		this.gameElement = document.getElementById(this.element);
 		this.board = new Board(this.width, this.height);
@@ -52,6 +54,7 @@ export default class Game {
 		document.addEventListener('keydown', event => {
 			if (event.key === KEYS.spaceBar) {
 				this.pause = !this.pause
+				this.zelda.play();
 			}
 		});
 
