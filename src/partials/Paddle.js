@@ -27,7 +27,16 @@ export default class Paddle {
     
     });
     
-  }
+}
+
+coordinates(x, y, width, height) {
+  let leftX = x;
+  let rightX = x + width;
+  let topY = y;
+  let bottomY = y + height;
+  return {leftX, rightX, topY, bottomY};
+} 
+
     up(){
         // get max number 
         // either 0 or the y position minus the speeed
