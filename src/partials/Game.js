@@ -3,6 +3,7 @@ import Board from './Board';
 import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
+import PaddleAI from './PaddleAI';
 
 
 export default class Game {
@@ -82,11 +83,11 @@ export default class Game {
 		this.gameElement.appendChild(svg);
 
 		this.board.render(svg);
-		this.paddleOne.render(svg);
+		this.paddleAI.render(svg);
 		this.paddleTwo.render(svg);
 		this.scoreOne.render(svg, this.paddleOne.score);
 		this.scoreTwo.render(svg, this.paddleTwo.score);
-		this.ball.render(svg, this.paddleOne, this.paddleTwo);
+		this.ball.render(svg, this.paddleAI, this.paddleTwo);
 	}
 
 }

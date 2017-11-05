@@ -39,8 +39,8 @@ export default class PaddleAI {
       this.stopMovingDown();
     }
   }
-
- predict: function(ball) {
+     
+           function(ball) {
   // only re-predict if the ball changed direction, or its been some amount of time since last prediction
   if (this.prediction &&
       ((this.prediction.dx * ball.dx) > 0) &&
