@@ -4,6 +4,7 @@ import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
 
+
 export default class Game {
 
 	constructor(element, width, height) {
@@ -17,15 +18,16 @@ export default class Game {
 		this.paddleWidth = 8;
 		this.paddleHeight = 56;
 		this.radius = 8;
-		// mouse = {},
+		this.speed = 10;
+		
 
 		// Ball instantiator
 		this.ball = new Ball(this.radius, this.width, this.height);
 
-		this.scoreOne = new Score((this.width/4), 30, 30);
-		
-		this.scoreTwo = new Score((this.width/4 *3), 30, 30);
-             
+		this.scoreOne = new Score((this.width / 4), 30, 30);
+
+		this.scoreTwo = new Score((this.width / 4 * 3), 30, 30);
+
 
 		this.paddleOne = new Paddle(
 			this.height,
@@ -50,23 +52,16 @@ export default class Game {
 		document.addEventListener('keydown', event => {
 			if (event.key === KEYS.spaceBar) {
 				this.pause = !this.pause
-				
+
 			}
 			if (event.key === KEYS.m) {
 				this.zelda.play();
 			}
-// 			document.addEventListener('mousemove', trackPosition, true);
-// 			function trackPosition(e) {
-// 	          mouse.x = e.pageX;
-// 			  mouse.y = e.pageY;
-// 						console.log(e);
-// }
-// 			if(mouse.x && mouse.y) {
-// 		for(var i = 1; i < this.paddleHeight; i++) {
-// 			p = this.paddleOne[i];
-// 			p.x = mouse.x - p.w/2;
-// 		}		
-// 	}
+		});
+		document.addEventListener('mousemove', event => {
+			this.paddleTwo.y = (event.pageY/3);
+			this.paddleTwo.y = Math.min(this.paddleTwo.y - this.speed, 200);
+			
 		});
 
 	}

@@ -48,21 +48,7 @@ export default class Ball {
 
         }
     } 
-           update(paddleOne) {
-  var x_pos = this.x;
-  var diff = -((this.paddleOne.x + (this.paddleOne.width / 2)) - x_pos);
-  if(diff < 0 && diff < -4) { // max speed left
-    diff = -5;
-  } else if(diff > 0 && diff > 4) { // max speed right
-    diff = 5;
-  }
-  this.paddleOne.move(diff, 0);
-  if(this.paddleOne.x < 0) {
-    this.paddleOne.x = 0;
-  } else if (this.paddleOne.x + this.paddleOne.height > 400) {
-    this.paddleOne.x = 400 - this.paddleOne.height;
-  }
-}
+     
 
     paddleCollision(paddleOne, paddleTwo){
        if (this.vx > 0){

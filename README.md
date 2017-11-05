@@ -22,7 +22,6 @@ A basic pong game using SVGs.
 * M: Music
 * 
 
-
 **Player 1:**
 * a: up
 * z: down
@@ -30,3 +29,7 @@ A basic pong game using SVGs.
 **Player 2:**
 * ▲ : up
 * ▼: down
+
+## References 
+
+Special Thanks to Jeremy Moseley for JavaScript advice. 
