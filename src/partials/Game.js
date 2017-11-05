@@ -3,8 +3,6 @@ import Board from './Board';
 import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
-import PaddleAI from './PaddleAI';
-
 
 export default class Game {
 
@@ -12,7 +10,7 @@ export default class Game {
 		this.element = element;
 		this.width = width;
 		this.height = height;
-		this.zelda = new Audio('./Audio/04_-overworld.wav');
+		this.zelda = new Audio('./public/audio/04_-overworld.wav');
 		this.gameElement = document.getElementById(this.element);
 		this.board = new Board(this.width, this.height);
 		this.boardgap = 10;
@@ -22,14 +20,14 @@ export default class Game {
 		this.speed = 10;
 		
 
-		// Ball instantiator
+		// Ball Instantiator
 		this.ball = new Ball(this.radius, this.width, this.height);
 
+        // Score Instantiator 
 		this.scoreOne = new Score((this.width / 4), 30, 30);
-
 		this.scoreTwo = new Score((this.width / 4 * 3), 30, 30);
 
-
+        // Paddle Instantiator 
 		this.paddleOne = new Paddle(
 			this.height,
 			this.paddleWidth,
@@ -49,7 +47,7 @@ export default class Game {
 			KEYS.up,
 			KEYS.down
 		);
-
+        // Event Listener for Pause, Theme.  
 		document.addEventListener('keydown', event => {
 			if (event.key === KEYS.spaceBar) {
 				this.pause = !this.pause
@@ -59,6 +57,7 @@ export default class Game {
 				this.zelda.play();
 			}
 		});
+		// Event Listener for move PaddleTwo with mouse. 
 		document.addEventListener('mousemove', event => {
 			this.paddleTwo.y = (event.pageY/3);
 			this.paddleTwo.y = Math.min(this.paddleTwo.y - this.speed, 200);
@@ -83,11 +82,11 @@ export default class Game {
 		this.gameElement.appendChild(svg);
 
 		this.board.render(svg);
-		this.paddleAI.render(svg);
+		this.paddleOne.render(svg);
 		this.paddleTwo.render(svg);
 		this.scoreOne.render(svg, this.paddleOne.score);
 		this.scoreTwo.render(svg, this.paddleTwo.score);
-		this.ball.render(svg, this.paddleAI, this.paddleTwo);
+		this.ball.render(svg, this.paddleOne, this.paddleTwo);
 	}
 
 }

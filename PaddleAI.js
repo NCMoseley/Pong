@@ -40,15 +40,15 @@ export default class PaddleAI {
     }
   }
      
-           function(ball) {
-  // only re-predict if the ball changed direction, or its been some amount of time since last prediction
-  if (this.prediction &&
-      ((this.prediction.dx * ball.dx) > 0) &&
-      ((this.prediction.dy * ball.dy) > 0) &&
-      (this.prediction.since < 1.0)) {
-    this.prediction.since += dt;
-    return;
-  }
+  //          function(ball) {
+  // // only re-predict if the ball changed direction, or its been some amount of time since last prediction
+  // if (this.prediction &&
+  //     ((this.prediction.dx * ball.dx) > 0) &&
+  //     ((this.prediction.dy * ball.dy) > 0) &&
+  //     (this.prediction.since < 1.0)) {
+  //   this.prediction.since += dt;
+  //   return;
+  // }
 
   var pt  = Pong.Helper.ballIntercept(ball, {left: this.left, right: this.right, top: -10000, bottom: 10000}, ball.dx * 10, ball.dy * 10);
   if (pt) {
