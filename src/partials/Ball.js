@@ -9,6 +9,7 @@ export default class Ball {
         this.ping = new Audio('public/sounds/pong-01.wav');
         this.ping2 = new Audio('public/sounds/pong-03.wav');
         this.ping3 = new Audio('http://www.sa-matra.net/sounds/starwars/Blaster-Imperial.wav');
+        
        
         this.reset();
     }
@@ -22,7 +23,7 @@ export default class Ball {
             this.vy = Math.floor(Math.random() * 10 - 5);
         }
     // Adjust this variable to control ball speed. 
-        this.vx = this.direction * (6 - Math.abs(this.vy));
+        this.vx = this.direction * (8 - Math.abs(this.vy));
     }
 
     wallCollision(paddleOne, paddleTwo) {
@@ -46,7 +47,23 @@ export default class Ball {
           this.ping2.play();
 
         }
-    }
+    } 
+           update(paddleOne) {
+  var x_pos = this.x;
+  var diff = -((this.paddleOne.x + (this.paddleOne.width / 2)) - x_pos);
+  if(diff < 0 && diff < -4) { // max speed left
+    diff = -5;
+  } else if(diff > 0 && diff > 4) { // max speed right
+    diff = 5;
+  }
+  this.paddleOne.move(diff, 0);
+  if(this.paddleOne.x < 0) {
+    this.paddleOne.x = 0;
+  } else if (this.paddleOne.x + this.paddleOne.height > 400) {
+    this.paddleOne.x = 400 - this.paddleOne.height;
+  }
+}
+
     paddleCollision(paddleOne, paddleTwo){
        if (this.vx > 0){
          let paddle = paddleTwo.coordinates(paddleTwo.x, paddleTwo.y, paddleTwo.width, paddleTwo.height);
@@ -54,7 +71,7 @@ export default class Ball {
 
         if(
            this.x + this.radius >= leftX
-           // right hand paddle is full viewport height
+           // For right hand paddle to become full viewport height, comment out 2 lines below. 
            && this.y >= topY
            && this.y <= bottomY 
         ) {
@@ -84,7 +101,7 @@ export default class Ball {
           player.score++;
            this.reset();
          
-    }
+        }
 
     render(svg, paddleOne, paddleTwo) {
         this.y += this.vy;

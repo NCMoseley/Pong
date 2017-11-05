@@ -18,6 +18,11 @@ A basic pong game using SVGs.
 
 ## Keys
 
+*SpaceBar: Pause
+* M: Music
+* 
+
+
 **Player 1:**
 * a: up
 * z: down
