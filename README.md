@@ -7,7 +7,7 @@ A basic Javascript pong game using procedurally generated SVGs.
 * SpaceBar: Pause
 * m: Cue Music
 * f: Speed up opponent paddle
-* g; Return opponent to original speed
+* g: Return opponent to original speed
 
 **Player:**
 * ▲ : up
@@ -29,13 +29,13 @@ A basic Javascript pong game using procedurally generated SVGs.
 
 ## Build
 
-I implemented WebPack to automatically compile .js files into the final build.js. This project was an opportunity to dive deeper into understanding javascript, and using multiple scripts to make a well organized finished product. The game includes mouse control for the player paddle, and an Ai algorithm that provides a computer opponent. 
+I implemented WebPack to automatically compile .js files into the final build.js. This project was an opportunity to dive deeper into understanding javascript, and using multiple scripts to make a well organized finished product. The game includes mouse control for the player paddle, and an Ai algorithm that provides a computer opponent. You can control the speed of the opponents paddle with the 'f' and 'g' keys. There is a soundtrack included that will begin when you press the letter 'm'. 
 
 ## References 
 
 This game was built using technology including:
 
-CSS,  
+CSS,
 WebPack,
 Visual Studio Code
 
