@@ -19,15 +19,14 @@ export default class Game {
 		this.radius = 8;
 		this.speed = 10;
 		
+			// Ball Instantiator
+			this.ball = new Ball(this.radius, this.width, this.height);
 
-		// Ball Instantiator
-		this.ball = new Ball(this.radius, this.width, this.height);
-
-        // Score Instantiator 
+		// Score Instantiator 
 		this.scoreOne = new Score((this.width / 4), 30, 30);
 		this.scoreTwo = new Score((this.width / 4 * 3), 30, 30);
 
-        // Paddle Instantiator 
+		// Paddle Instantiator 
 		this.paddleOne = new Paddle(
 			this.height,
 			this.paddleWidth,
@@ -47,7 +46,7 @@ export default class Game {
 			KEYS.up,
 			KEYS.down
 		);
-        // Event Listener for Pause, Theme.  
+		// Event Listener for Pause, Theme music.  
 		document.addEventListener('keydown', event => {
 			if (event.key === KEYS.spaceBar) {
 				this.pause = !this.pause
@@ -56,16 +55,29 @@ export default class Game {
 			if (event.key === KEYS.m) {
 				this.zelda.play();
 			}
+
+			if (event.key === KEYS.f) {
+				this.zelda.play();
+			}
 		});
 		// Event Listener for move PaddleTwo with mouse. 
 		document.addEventListener('mousemove', event => {
-			this.paddleTwo.y = (event.pageY/3);
+			this.paddleTwo.y = (event.pageY / 3);
 			this.paddleTwo.y = Math.min(this.paddleTwo.y - this.speed, 200);
-			
+
 		});
 
 	}
-
+	goal(point, end) {
+		point.score++;
+		if (point.score > 2) {
+			point.score = 0;
+			end.score = 0;
+			alert('Yahoo!');
+		}
+		
+		this.reset();
+	}
 
 	render() {
 		if (this.pause) {

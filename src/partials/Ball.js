@@ -10,7 +10,6 @@ export default class Ball {
         this.ping2 = new Audio('public/sounds/pong-03.wav');
         this.ping3 = new Audio('http://www.sa-matra.net/sounds/starwars/Blaster-Imperial.wav');
         
-       
         this.reset();
     }
     // Starting Position for ball

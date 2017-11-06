@@ -1,6 +1,6 @@
 # Pong Game
 
-A basic pong game using SVGs.
+A basic Javascript pong game using SVGs.
 
 ## Setup
 
@@ -19,8 +19,8 @@ A basic pong game using SVGs.
 ## Keys
 
 *SpaceBar: Pause
-* M: Music
-* 
+* m: Music
+* f: Easter egg
 
 **Player 1:**
 * a: up
