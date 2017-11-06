@@ -28,7 +28,7 @@ export default class Game {
 		this.scoreTwo = new Score((this.width / 4 * 3), 30, 30);
 
 		// Paddle Instantiator 
-		this.paddleAi = new Paddle(
+		this.paddleAi = new PaddleAi(
 			this.height,
 			this.paddleWidth,
 			this.paddleHeight,
@@ -47,6 +47,7 @@ export default class Game {
 			KEYS.up,
 			KEYS.down
 		);
+
 		// Event Listener for Pause, Theme music.  
 		document.addEventListener('keydown', event => {
 			if (event.key === KEYS.spaceBar) {
@@ -61,6 +62,7 @@ export default class Game {
 				this.zelda.play();
 			}
 		});
+
 		// Event Listener for move PaddleTwo with mouse. 
 		document.addEventListener('mousemove', event => {
 			this.paddleTwo.y = (event.pageY / 3);
@@ -86,11 +88,11 @@ export default class Game {
 		this.gameElement.appendChild(svg);
 
 		this.board.render(svg);
-		this.paddleOne.render(svg);
+		this.paddleAi.render(svg);
 		this.paddleTwo.render(svg);
-		this.scoreOne.render(svg, this.paddleOne.score);
+		this.scoreOne.render(svg, this.paddleAi.score);
 		this.scoreTwo.render(svg, this.paddleTwo.score);
-		this.ball.render(svg, this.paddleOne, this.paddleTwo);
+		this.ball.render(svg, this.paddleAi, this.paddleTwo);
 	}
 
 }
