@@ -3,6 +3,7 @@ import Board from './Board';
 import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
+import PaddleAi from './PaddleAi';
 
 export default class Game {
 
@@ -19,15 +20,15 @@ export default class Game {
 		this.radius = 8;
 		this.speed = 10;
 		
-			// Ball Instantiator
-			this.ball = new Ball(this.radius, this.width, this.height);
+		// Ball Instantiator
+		this.ball = new Ball(this.radius, this.width, this.height);
 
 		// Score Instantiator 
 		this.scoreOne = new Score((this.width / 4), 30, 30);
 		this.scoreTwo = new Score((this.width / 4 * 3), 30, 30);
 
 		// Paddle Instantiator 
-		this.paddleOne = new Paddle(
+		this.paddleAi = new Paddle(
 			this.height,
 			this.paddleWidth,
 			this.paddleHeight,
@@ -68,16 +69,7 @@ export default class Game {
 		});
 
 	}
-	goal(point, end) {
-		point.score++;
-		if (point.score > 2) {
-			point.score = 0;
-			end.score = 0;
-			alert('Yahoo!');
-		}
-		
-		this.reset();
-	}
+	
 
 	render() {
 		if (this.pause) {

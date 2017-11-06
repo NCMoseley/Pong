@@ -32,12 +32,12 @@ export default class Ball {
         const hitBottom = this.y + this.radius >= this.boardHeight;
 
         if(hitLeft){
-          this.goal(paddleTwo);
+          this.goal(paddleTwo,paddleOne);
           this.direction = -1;
           this.ping3.play();
 
         }else if(hitRight){
-          this.goal(paddleOne);
+          this.goal(paddleOne,paddleTwo);
           this.direction = 1;
           this.ping3.play();
 
@@ -82,11 +82,16 @@ export default class Ball {
 
     }
 
-    goal(player){
-          player.score++;
-           this.reset();
-         
-        }
+   goal(point, opponent) {
+		point.score++;
+		if (point.score > 2) {
+			point.score = 0;
+			opponent.score = 0;
+			alert('You Win!');
+		}
+		
+		this.reset();
+	}
 
     render(svg, paddleOne, paddleTwo) {
         this.y += this.vy;
