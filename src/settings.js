@@ -9,4 +9,5 @@ export const KEYS = {
   down: 'ArrowDown',     
   spaceBar: ' ', 
   f: 'f',
+  g: 'g',
 };

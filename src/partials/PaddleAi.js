@@ -1,4 +1,4 @@
-import { SVG_NS } from '../settings';
+import { SVG_NS, KEYS } from '../settings';
 
 
 export default class PaddleAi {
@@ -10,19 +10,27 @@ export default class PaddleAi {
     this.x = x;
     this.y = y;
     this.ball = ball;
-    this.speed = 10;
+    this.speed = 1;
     this.score = 0;
-
-
+    window.setInterval((function () {
+    this.chasepaddle();
+    }).bind(this), 10);
+    document.addEventListener('keydown', event => {
+			if (event.key === KEYS.f) {
+        this.speed = (this.speed+.5);
+      }
+			if (event.key === KEYS.g) {
+        this.speed = (this.speed = 1);
+			}
+    });
   }
   // Begin Ai
   chasepaddle() {
-    if (this.ball.y >= this.y) {
+    if (this.ball.y <= this.y) {
       this.up();
-    } else if (this.ball.y <= this.y) {
+    } else if (this.ball.y >= this.y) {
       this.down();
     }
-    console.info(this.ball.y);
   }
 
   coordinates(x, y, width, height) {
@@ -34,21 +42,13 @@ export default class PaddleAi {
   }
 
   up() {
-    // get max number 
-    // either 0 or the y position minus the speeed
     this.y = Math.max(this.y - this.speed, 0);
   }
-
   down() {
-    //  get min number 
-    // either height of the board minus the paddle or the y position plus the speeed
     this.y = Math.min(this.y + this.speed, this.boardHeight - this.height);
   }
 
-
   render(svg) {
-
-    this.chasepaddle();
 
     let rect = document.createElementNS(SVG_NS, 'rect');
     rect.setAttributeNS(null, 'width', this.width);
@@ -60,8 +60,5 @@ export default class PaddleAi {
     rect.setAttributeNS(null, 'ry', 4);
     svg.appendChild(rect);
 
-
   }
-
-
 } 

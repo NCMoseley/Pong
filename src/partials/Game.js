@@ -34,8 +34,7 @@ export default class Game {
 			this.paddleHeight,
 			this.boardgap,
 			(this.height - this.paddleHeight) / 2,
-			KEYS.a,
-			KEYS.z
+			this.ball
 		);
 
 		this.paddleTwo = new Paddle(
@@ -58,9 +57,6 @@ export default class Game {
 				this.zelda.play();
 			}
 
-			if (event.key === KEYS.f) {
-				this.zelda.play();
-			}
 		});
 
 		// Event Listener for move PaddleTwo with mouse. 
