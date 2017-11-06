@@ -18,10 +18,10 @@ export default class Ball {
 
         this.vy = 0;
         while (this.vy === 0) {
-            this.vy = Math.floor(Math.random() * 10 - 5);
+               this.vy = Math.floor(Math.random() * 13 - 2);
         }
         // Adjust this value to control ball speed. 
-        this.vx = this.direction * (8 - Math.abs(this.vy));
+        this.vx = this.direction * (14 - Math.abs(this.vy));
     }
 
     wallCollision(paddleOne, paddleTwo) {
@@ -32,12 +32,12 @@ export default class Ball {
 
         if (hitLeft) {
             this.goal(paddleTwo, paddleOne);
-            this.direction = -1;
+            this.direction = 1;
             this.ping3.play();
 
         } else if (hitRight) {
             this.goal(paddleOne, paddleTwo);
-            this.direction = 1;
+            this.direction = -1;
             this.ping3.play();
 
         } else if (hitTop || hitBottom) {
@@ -45,7 +45,6 @@ export default class Ball {
             this.ping2.play();
         }
     }
-
 
     paddleCollision(paddleOne, paddleTwo) {
         if (this.vx > 0) {

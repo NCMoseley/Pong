@@ -19,7 +19,7 @@ export default class Game {
 		this.paddleHeight = 56;
 		this.radius = 8;
 		this.speed = 10;
-		
+
 		// Ball Instantiator
 		this.ball = new Ball(this.radius, this.width, this.height);
 
@@ -56,7 +56,6 @@ export default class Game {
 			if (event.key === KEYS.m) {
 				this.zelda.play();
 			}
-
 		});
 
 		// Event Listener for move PaddleTwo with mouse. 
@@ -65,9 +64,7 @@ export default class Game {
 			this.paddleTwo.y = Math.min(this.paddleTwo.y - this.speed, 200);
 
 		});
-
 	}
-	
 
 	render() {
 		if (this.pause) {

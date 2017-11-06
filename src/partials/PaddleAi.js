@@ -1,6 +1,5 @@
 import { SVG_NS, KEYS } from '../settings';
 
-
 export default class PaddleAi {
 
   constructor(boardHeight, width, height, x, y, ball) {
@@ -10,7 +9,7 @@ export default class PaddleAi {
     this.x = x;
     this.y = y;
     this.ball = ball;
-    this.speed = 1;
+    this.speed = 2;
     this.score = 0;
     window.setInterval((function () {
     this.chasepaddle();
@@ -24,7 +23,7 @@ export default class PaddleAi {
 			}
     });
   }
-  // Begin Ai
+  //  Ai Component
   chasepaddle() {
     if (this.ball.y <= this.y) {
       this.up();

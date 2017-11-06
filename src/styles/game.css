@@ -67,6 +67,8 @@ table {
  * GAME
  */
 
+
+
 html {
   font-size: 16px;
   background: grey;
@@ -79,10 +81,29 @@ body {
   height: 100vh;
   justify-content: center;
   width: 100%;
+  cursor: none;
 }
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem; 
   text-align: center;
+}
+
+h2 {
+  color:rgb(47, 255, 245);
+  font-size:35px;
+  text-transform: uppercase; 
+  text-align: center;
+}
+p {
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(154, 219, 110);
+  
+}
+span {
+  color: white;
+  font-weight: bold;
+
 }
