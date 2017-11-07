@@ -25,9 +25,10 @@ export default class PaddleAi {
   }
   //  Ai Component
   chasepaddle() {
-    if (this.ball.y <= this.y) {
+    // Adjust these "this.y" values to adjust difficulty.
+    if (this.ball.y <= this.y + 35) {
       this.up();
-    } else if (this.ball.y >= this.y) {
+    } else if (this.ball.y >= this.y - 35) {
       this.down();
     }
   }

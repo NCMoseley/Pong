@@ -19,6 +19,7 @@ export default class Game {
 		this.paddleHeight = 56;
 		this.radius = 8;
 		this.speed = 10;
+		this.running = false;
 
 		// Ball Instantiator
 		this.ball = new Ball(this.radius, this.width, this.height);
