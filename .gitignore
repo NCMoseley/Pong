@@ -9,7 +9,8 @@ ehthumbs.db
 *.Trashes
 # Editor
 .vscode
-
+Icon
+Icons?
 # npm
 node_modules
 npm-debug.log

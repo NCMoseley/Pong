@@ -1,5 +1,5 @@
 
-![](https://github.com/NCMoseley/Pong/blob/master/Screen%20Shot%202017-11-29%20at%2012.32.04%20AM.png)
+![](https://github.com/NCMoseley/Pong/blob/master/pong1.png)
 
 # Pong Game
 
@@ -16,7 +16,7 @@ A basic Javascript pong game using procedurally generated SVGs.
 * ▲ : up
 * ▼ : down
 
-![](https://github.com/NCMoseley/Pong/blob/master/Screen%20Shot%202017-11-29%20at%2012.32.22%20AM.png)
+![](https://github.com/NCMoseley/Pong/blob/master/pong2.png)
 
 ## Setup
 
