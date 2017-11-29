@@ -1,3 +1,6 @@
+
+![](/main/Desktop/pong!/Screen Shot 2017-11-29 at 12.32.04 AM.png)
+
 # Pong Game
 
 A basic Javascript pong game using procedurally generated SVGs. 
@@ -12,6 +15,8 @@ A basic Javascript pong game using procedurally generated SVGs.
 **Player:**
 * ▲ : up
 * ▼ : down
+
+![](/main/Desktop/pong!/Screen Shot 2017-11-29 at 12.32.22 AM.png)
 
 ## Setup
 
