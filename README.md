@@ -13,8 +13,7 @@ A basic Javascript pong game using procedurally generated SVGs.
 * g: Return opponent to original speed
 
 **Player:**
-* ▲ : up
-* ▼ : down
+* Use the mouse to control the paddle
 
 ![](https://github.com/NCMoseley/Pong/blob/master/pong2.png)
 
